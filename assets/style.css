@@ -152,21 +152,20 @@ h1 {
 .btn:hover { border-color: var(--accent); transform: translateY(-1px); }
 .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 
-.portrait { position: relative; justify-self: end; width: 100%; max-width: 300px; }
-.portrait::before {
-  content: ""; position: absolute; inset: 14px -14px -14px 14px;
-  border: 1px solid var(--accent); border-radius: var(--radius); opacity: 0.55;
+.portrait {
+  justify-self: end; width: 100%; max-width: 300px;
+  padding: 10px; border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  border-radius: calc(var(--radius) + 6px);
 }
 .portrait img {
-  position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 22%;
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 22%;
   border-radius: var(--radius); background: var(--bg-alt);
 }
 
 @media (max-width: 860px) {
   .hero { padding: 40px 0 40px; }
   .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-  .portrait { order: -1; justify-self: start; max-width: 168px; }
-  .portrait::before { inset: 8px -8px -8px 8px; }
+  .portrait { order: -1; justify-self: start; max-width: 180px; padding: 6px; }
 }
 
 /* ---------- Metrics ---------- */
